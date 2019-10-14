@@ -1,7 +1,6 @@
 // Test away!
 import React from 'react';
 import { render } from '@testing-library/react';
-
 import Display from './Display';
 
 // displays if gate open/closed and if it is locked/unlocked
@@ -15,7 +14,7 @@ test('displays if gate is open/closed and if it is locked/unlocked', () => {
 test('displays "Closed" if closed prop is true and "Open" if otherwise', () => {
   const displayWhenClosed = render(<Display closed={true} />);
   expect(displayWhenClosed.getByText(/closed/i));
-
+  
   const displayWhenNotClosed = render(<Display closed={false} />);
   expect(displayWhenNotClosed.getByText(/open/i));
 
@@ -34,25 +33,25 @@ test('displays "Locked" if the locked prop is true and "Unlocked" if otherwise',
 // when locked or closed use the red-led class
 test('uses red-led class when locked', () => {
   const component = render(<Display locked={true} />);
-  const locked = component.getByText(/locked/i);
-  expect(locked.classList.contains('red-led')).toBe(true);
+  const lockedNode = component.getByText(/locked/i);
+  expect(lockedNode.classList.contains('red-led')).toBe(true);
 });
 
 test('uses red-led class when closed', () => {
   const component = render(<Display closed={true} />);
-  const closed = component.getByText(/closed/i);
-  expect(closed.classList.contains('red-led')).toBe(true);
+  const closedNode = component.getByText(/closed/i);
+  expect(closedNode.classList.contains('red-led')).toBe(true);
 });
 
 // when unlocked or open use the green-led class
 test('uses green-led class when unlocked', () => {
   const component = render(<Display locked={false} />);
-  const unlocked = component.getByText(/unlocked/i);
-  expect(unlocked.classList.contains('green-led')).toBe(true);
+  const unlockedNode = component.getByText(/unlocked/i);
+  expect(unlockedNode.classList.contains('green-led')).toBe(true);
 });
 
 test('uses green-led class when open', () => {
   const component = render(<Display closed={false} />);
-  const open = component.getByText(/open/i);
-  expect(open.classList.contains('green-led')).toBe(true);
+  const openNode = component.getByText(/open/i);
+  expect(openNode.classList.contains('green-led')).toBe(true);
 });
