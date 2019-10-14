@@ -12,11 +12,17 @@ test('The component provides buttons to toggle closed and locked states', () => 
 
 //- buttons' text changes to reflect the state the door will be in if clicked
 test('Button text changes to reflect reflect the state the door will be in if clicked', () => {
-    const controls = render(<Controls locked={true} />);
-    const unlockGate = controls.getByText(/unlock gate/i);
-    fireEvent.click(unlockGate);
-    controls.findByText(/unlocked/i);
+    const controls = render(<Controls locked={false} />);
+    
+    const closeGate = controls.getByText(/close gate/i);
+    fireEvent.click(closeGate);
+    controls.findByText(/closed/i);
+    
+    const lockGate = controls.getByText(/lock gate/i);
+    fireEvent.click(lockGate);
+    controls.findByText(/locked/i);
   });
+
 
 // - the closed toggle button is disabled if the gate is locked
   test('The closed button of the component is disabled if the gate is locked', () => {
