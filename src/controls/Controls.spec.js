@@ -23,7 +23,6 @@ test('Button text changes to reflect reflect the state the door will be in if cl
     controls.findByText(/locked/i);
   });
 
-
 // - the closed toggle button is disabled if the gate is locked
   test('The closed button of the component is disabled if the gate is locked', () => {
     const component = render(<Controls locked={true} closed={true} />);

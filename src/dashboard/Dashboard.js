@@ -1,7 +1,8 @@
 import React from 'react';
-
 import Display from '../display/Display';
 import Controls from '../controls/Controls';
+import { connect } from 'react-redux';
+import * as reduxStore from '../redux/index'
 
 class Dashboard extends React.Component {
   state = {
@@ -26,12 +27,12 @@ class Dashboard extends React.Component {
   }
 
   toggleLocked = () => {
-    this.setState(prev => ({ locked: !prev.locked }));
-  };
+		this.props.dispatch({ type: reduxStore.TOGGLE_LOCKED });
+	};
 
-  toggleClosed = () => {
-    this.setState(prev => ({ closed: !prev.closed }));
-  };
+	toggleClosed = () => {
+		this.props.dispatch({ type: reduxStore.TOGGLE_CLOSED });
+	};
 }
 
-export default Dashboard;
+export default connect(state => state.gate)(Dashboard)

@@ -14,7 +14,7 @@ test('displays if gate is open/closed and if it is locked/unlocked', () => {
 test('displays "Closed" if closed prop is true and "Open" if otherwise', () => {
   const displayWhenClosed = render(<Display closed={true} />);
   expect(displayWhenClosed.getByText(/closed/i));
-  
+
   const displayWhenNotClosed = render(<Display closed={false} />);
   expect(displayWhenNotClosed.getByText(/open/i));
 
