@@ -23,7 +23,6 @@ test("Dashboard shows display", () => {
 
 // gate defaults to unlocked and open
 test("gate defaults to unlocked and open", () => {
-  // const dashboard = render(<Dashboard />);
   expect(wrapper.getByText(/open/i));
   expect(wrapper.getByText(/unlocked/i));
 });
