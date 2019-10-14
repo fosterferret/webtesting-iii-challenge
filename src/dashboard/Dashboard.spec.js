@@ -1,16 +1,13 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import Dashboard from './Dashboard';
-import Controls from '../controls/Controls';
-import Display from '../display/Display';
-
+import React from "react";
+import { render } from "@testing-library/react";
+import Controls from "../controls/Controls";
+import Display from "../display/Display";
 
 // Test away
+test("Dashboard shows controls", () => {
+  render(<Controls />);
+});
 
-
-
-
-
-
-
-// - displays 'Closed' if the `closed` prop is `true` and 'Open' if otherwise
+test("Dashboard shows display", () => {
+  render(<Display />);
+});
