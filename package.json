@@ -3,9 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@testing-library/jest-dom": "^4.1.2",
+    "@testing-library/react": "^9.3.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "react-scripts": "2.1.5"
+    "react-redux": "^7.1.1",
+    "react-scripts": "2.1.5",
+    "redux": "^4.0.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -24,6 +28,6 @@
   ],
   "devDependencies": {
     "jest-dom": "^3.1.2",
-    "react-testing-library": "^6.1.2"
+    "react-testing-library": "^8.0.1"
   }
 }
